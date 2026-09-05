@@ -1,0 +1,4 @@
+payments,feature_preparation_seconds,batch_ml_scoring_seconds,policy_economics_seconds,solver_seconds,total_seconds,solver_status,assignment_count
+1000,0.4538,0.3972,0.2263,11.8103,12.8876,OPTIMAL,1000
+5000,2.2967,1.4428,1.3017,22.3529,27.394,OPTIMAL,5000
+10000,2.7313,2.961,3.1464,39.463,48.3018,FEASIBLE,10000

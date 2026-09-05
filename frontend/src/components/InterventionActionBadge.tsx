@@ -1,0 +1,2 @@
+const labels:Record<string,string>={RETRY_NOW:"Retry now",RETRY_LATER:"Retry later",PAYMENT_LINK:"Payment link",ALTERNATE_METHOD:"Alternate method",WHATSAPP:"WhatsApp",EMAIL:"Email",INCENTIVE:"Incentive",HUMAN_ESCALATION:"Human escalation",DO_NOTHING:"Do nothing"};
+export function InterventionActionBadge({action}:{action:string}){return <span className={`action-badge action-${action.toLowerCase()}`}><i/>{labels[action]??action}</span>}

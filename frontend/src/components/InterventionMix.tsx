@@ -1,0 +1,2 @@
+import type { InterventionMixItem } from "../types/dashboard"; import { InterventionActionBadge } from "./InterventionActionBadge";
+export function InterventionMix({items}:{items:InterventionMixItem[]}){const max=Math.max(...items.map(i=>i.count),1);return <div className="mix-list">{items.map(item=><div className="mix-row" key={item.action}><InterventionActionBadge action={item.action}/><div className="mix-track"><span style={{width:`${item.count/max*100}%`}}/></div><strong>{item.count}</strong></div>)}</div>}

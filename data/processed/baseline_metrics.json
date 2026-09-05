@@ -1,0 +1,14 @@
+{
+    "system": "RecoverIQ synthetic fixed-rule baseline",
+    "payments_evaluated": 10000,
+    "total_revenue_at_risk": 24730075.95,
+    "gross_recovered_revenue": 12284579.66,
+    "recovery_rate": 0.5059,
+    "intervention_spend": 3492.5,
+    "incentive_spend": 0.0,
+    "net_recovered_revenue": 12281087.16,
+    "expected_net_recovered_revenue": 12414072.72,
+    "retry_count": 5920,
+    "customer_contacts": 2572,
+    "do_nothing_count": 1508
+}

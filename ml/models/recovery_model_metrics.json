@@ -1,0 +1,43 @@
+{
+  "model": "XGBoost recovery predictor",
+  "train_rows": 32000,
+  "validation_rows": 8000,
+  "test_rows": 10000,
+  "features": [
+    "amount",
+    "attempt_number",
+    "hour",
+    "day_of_week",
+    "customer_tenure_days",
+    "successful_payments",
+    "failed_payments",
+    "previous_recoveries",
+    "historical_recovery_rate",
+    "avg_transaction_value",
+    "whatsapp_response_rate",
+    "email_response_rate",
+    "retry_success_rate",
+    "payment_link_conversion_rate",
+    "price_sensitivity",
+    "payment_method",
+    "failure_code",
+    "failure_type",
+    "action_taken"
+  ],
+  "validation": {
+    "roc_auc": 0.6979169347919347,
+    "log_loss": 0.5978019071215701,
+    "brier_score": 0.2065891569120368,
+    "accuracy": 0.672375,
+    "precision": 0.5893516078017923,
+    "recall": 0.3777027027027027
+  },
+  "test": {
+    "roc_auc": 0.7048660446160447,
+    "log_loss": 0.5920103903641171,
+    "brier_score": 0.20482609916069597,
+    "accuracy": 0.6655,
+    "precision": 0.5754356141096473,
+    "recall": 0.3659459459459459
+  }
+}

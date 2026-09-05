@@ -1,0 +1,9 @@
+export interface OptimizationConstraints { total_budget:number; incentive_budget:number; max_retries:number; max_contacts:number; max_whatsapp:number; max_incentive_actions:number; max_human_escalations:number; solver_timeout_ms:number }
+export interface PortfolioMetadata { source:string; label:string; payment_count:number; revenue_at_risk:number; default_constraints:OptimizationConstraints }
+export interface AlternativeScore { action:string; recovery_probability:number; incremental_value:number; intervention_cost:number; expected_net_value:number }
+export interface PlanAssignment { payment_id:string; amount:number; payment_method:string; failure_type:string; action:string; recovery_probability:number; incremental_value:number; intervention_cost:number; incentive_cost:number; expected_net_value:number; policy_status:string; alternatives:AlternativeScore[] }
+export interface ActionAllocation { action:string; count:number; percentage:number; incremental_value:number }
+export interface ResourceUsage { key:string; label:string; used:number; limit:number; unit:"INR"|"count"; within_constraint:boolean }
+export interface OptimizationResult { portfolio_source:string; portfolio_label:string; status:string; payment_count:number; revenue_at_risk:number; baseline_net_value:number; baseline_recovery_rate:number; optimized_net_value:number; total_incremental_value:number; improvement_amount:number; improvement_percent:number; expected_recovery_rate:number; intervention_spend:number; action_allocation:ActionAllocation[]; resource_usage:ResourceUsage[]; assignments:PlanAssignment[] }
+export type WhatIfChanges = Partial<OptimizationConstraints>;
+export interface WhatIfProposal { proposed_changes:WhatIfChanges; current_constraints:OptimizationConstraints; requires_confirmation:true; applied:false }

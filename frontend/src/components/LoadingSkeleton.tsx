@@ -1,0 +1,1 @@
+export function LoadingSkeleton(){return <div aria-label="Loading dashboard" role="status"><div className="skeleton-metrics">{Array.from({length:5},(_,i)=><div className="skeleton-card" key={i}><i/><b/><span/></div>)}</div><div className="skeleton-panel"><i/><i/><i/><i/></div></div>}

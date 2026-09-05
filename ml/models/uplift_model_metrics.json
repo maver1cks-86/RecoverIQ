@@ -1,0 +1,109 @@
+{
+  "model_type": "T-learner",
+  "control_action": "DO_NOTHING",
+  "features": [
+    "amount",
+    "attempt_number",
+    "hour",
+    "day_of_week",
+    "customer_tenure_days",
+    "successful_payments",
+    "failed_payments",
+    "previous_recoveries",
+    "historical_recovery_rate",
+    "avg_transaction_value",
+    "whatsapp_response_rate",
+    "email_response_rate",
+    "retry_success_rate",
+    "payment_link_conversion_rate",
+    "price_sensitivity",
+    "payment_method",
+    "failure_code",
+    "failure_type"
+  ],
+  "per_action_metrics": {
+    "RETRY_NOW": {
+      "training_samples": 4410,
+      "validation_samples": 1136,
+      "training_positive_rate": 0.28253968253968254,
+      "validation_positive_rate": 0.2852112676056338,
+      "roc_auc": 0.7185010338745971,
+      "log_loss": 0.5499573771488703,
+      "brier_score": 0.18532838376218067
+    },
+    "RETRY_LATER": {
+      "training_samples": 5699,
+      "validation_samples": 1461,
+      "training_positive_rate": 0.4446394104228812,
+      "validation_positive_rate": 0.4462696783025325,
+      "roc_auc": 0.7548912919835896,
+      "log_loss": 0.5870593945082133,
+      "brier_score": 0.20153052576146002
+    },
+    "PAYMENT_LINK": {
+      "training_samples": 3385,
+      "validation_samples": 867,
+      "training_positive_rate": 0.37695716395864104,
+      "validation_positive_rate": 0.3621683967704729,
+      "roc_auc": 0.6045887515693209,
+      "log_loss": 0.6727416937684965,
+      "brier_score": 0.23767789594311214
+    },
+    "ALTERNATE_METHOD": {
+      "training_samples": 2615,
+      "validation_samples": 606,
+      "training_positive_rate": 0.43365200764818357,
+      "validation_positive_rate": 0.4042904290429043,
+      "roc_auc": 0.5741534286844932,
+      "log_loss": 0.7270352134672128,
+      "brier_score": 0.25791593914587907
+    },
+    "WHATSAPP": {
+      "training_samples": 4503,
+      "validation_samples": 1138,
+      "training_positive_rate": 0.40617366200310906,
+      "validation_positive_rate": 0.4182776801405975,
+      "roc_auc": 0.6469604458097439,
+      "log_loss": 0.6591724042199325,
+      "brier_score": 0.23210985241429918
+    },
+    "EMAIL": {
+      "training_samples": 2945,
+      "validation_samples": 701,
+      "training_positive_rate": 0.33820033955857387,
+      "validation_positive_rate": 0.33951497860199714,
+      "roc_auc": 0.6117574459589451,
+      "log_loss": 0.6515123761257442,
+      "brier_score": 0.22697204504866697
+    },
+    "INCENTIVE": {
+      "training_samples": 2593,
+      "validation_samples": 667,
+      "training_positive_rate": 0.4778249132279213,
+      "validation_positive_rate": 0.4617691154422789,
+      "roc_auc": 0.5927811742574973,
+      "log_loss": 0.7356994691273755,
+      "brier_score": 0.261493524322887
+    },
+    "HUMAN_ESCALATION": {
+      "training_samples": 1274,
+      "validation_samples": 294,
+      "training_positive_rate": 0.3649921507064364,
+      "validation_positive_rate": 0.4421768707482993,
+      "roc_auc": 0.5721857410881801,
+      "log_loss": 0.7734549155048864,
+      "brier_score": 0.274637115369218
+    },
+    "DO_NOTHING": {
+      "training_samples": 4576,
+      "validation_samples": 1130,
+      "training_positive_rate": 0.24541083916083917,
+      "validation_positive_rate": 0.2415929203539823,
+      "roc_auc": 0.5813960446399186,
+      "log_loss": 0.5745722794226333,
+      "brier_score": 0.18932703906447737
+    }
+  },
+  "total_training_rows": 32000,
+  "total_validation_rows": 8000
+}

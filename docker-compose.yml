@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: recoveriq-postgres
+    environment:
+      POSTGRES_USER: recoveriq
+      POSTGRES_PASSWORD: recoveriq
+      POSTGRES_DB: recoveriq
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: recoveriq-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:

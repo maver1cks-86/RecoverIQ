@@ -1,0 +1,51 @@
+{
+  "scope": "synthetic_offline_decision_quality_evaluation",
+  "production_merchant_uplift": false,
+  "dataset": {
+    "total_rows": 50000,
+    "train_rows": 32000,
+    "validation_rows": 8000,
+    "frozen_test_rows": 10000,
+    "split_seed": 42
+  },
+  "frozen_test": {
+    "revenue_at_risk": 24730075.95,
+    "baseline": {
+      "label": "RecoverIQ synthetic fixed-rule baseline",
+      "expected_net_revenue": 12414072.72,
+      "expected_recovery_rate": 0.5029282305
+    },
+    "unconstrained_predictive_benchmark": {
+      "expected_net_revenue": 13285455.82,
+      "expected_recovery_rate": 0.551485576,
+      "resource_feasible": false
+    },
+    "constrained_optimizer": {
+      "expected_net_revenue": 12928146.30,
+      "expected_recovery_rate": 0.5129711433,
+      "incremental_net_revenue_vs_baseline": 514073.58,
+      "relative_improvement_percent": 4.14105501795,
+      "solver_status": "OPTIMAL",
+      "constraints": {
+        "total_recovery_spend": 20000,
+        "incentive_budget": 10000,
+        "retry_capacity": 3500,
+        "contact_capacity": 3000,
+        "whatsapp_capacity": 1500,
+        "max_incentive_actions": 500,
+        "max_human_escalations": 300,
+        "solver_timeout_ms": 120000
+      }
+    }
+  },
+  "local_scale_benchmark": [
+    {"payments": 1000, "total_seconds": 12.8876, "solver_status": "OPTIMAL"},
+    {"payments": 5000, "total_seconds": 27.3940, "solver_status": "OPTIMAL"},
+    {"payments": 10000, "total_seconds": 48.3018, "solver_status": "FEASIBLE"}
+  ],
+  "sources": [
+    "data/processed/strategy_comparison.csv",
+    "data/evaluation/phase27_scalability.csv",
+    "ml/models/recovery_model_metrics.json"
+  ]
+}
